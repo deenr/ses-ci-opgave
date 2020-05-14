@@ -1,0 +1,23 @@
+language: java
+
+jdk:
+  - openjdk13
+
+env:
+  - NODE_VERSION="12.10.0"
+
+notifications:
+  email: false
+
+before_install:
+  - nvm install $NODE_VERSION
+  - nvm use $NODE_VERSION
+  - pushd frontend
+  - npm install
+  - mkdir dist
+  - popd
+
+install:
+  - ./gradlew check
+  - ./gradlew frontendSync --stacktrace
+  - ./gradlew shadowJar
