@@ -2,4 +2,6 @@ language: java
 
 jdk:
   - openjdk13
-  
+
+install:
+  - ./gradlew test\
