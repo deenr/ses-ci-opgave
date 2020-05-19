@@ -4,4 +4,4 @@ jdk:
   - openjdk13
 
 install:
-  - ./gradlew test\
+  - ./gradlew test
